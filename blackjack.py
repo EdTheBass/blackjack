@@ -78,6 +78,9 @@ while player.money >= 0:
         o.oprint(f"\nCongrats! You beat the casino for {player.money - 1000}.")
         quit()
     else:
+        if player.money == 0:
+            o.oprint("\nYou lost all your money you idiot. How do you expect to win again?")
+            quit()
         o.oprint("\nOkay, carrying on.")
 
     for x in player.hand:
