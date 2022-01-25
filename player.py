@@ -68,6 +68,9 @@ class Player:
         self.calc_total()
 
     def double(self, deck):
-        self.money -= self.bet
-        self.bet *= 2
+        if self.money > self.bet*2:
+            self.money -= self.bet
+            self.bet *= 2
+            return
+        o.oprint("\nYou couldn't afford to double, so you hit.")
         self.hit(deck)
